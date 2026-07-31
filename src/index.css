@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Glow & Background Enhancements */
+@layer utilities {
+  .bg-mesh-light {
+    background-color: #f8fafc;
+    background-image:
+      radial-gradient(
+        at 10% 10%,
+        rgba(16, 185, 129, 0.12) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 90% 20%, rgba(14, 165, 233, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 80%, rgba(52, 211, 153, 0.08) 0px, transparent 50%);
+  }
+
+  .bg-mesh-dark {
+    background-color: #0b1311;
+    background-image:
+      radial-gradient(at 10% 10%, rgba(5, 150, 105, 0.2) 0px, transparent 50%),
+      radial-gradient(
+        at 90% 20%,
+        rgba(13, 148, 136, 0.15) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 50% 90%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
+  }
+
+  /* Glassmorphism card backdrop */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .dark .glass-card {
+    background: rgba(15, 28, 24, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
