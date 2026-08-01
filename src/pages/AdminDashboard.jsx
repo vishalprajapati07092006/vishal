@@ -4,6 +4,14 @@ import { db } from '../firebase/firebase';
 import { useAuth } from '../context/AuthContext';
 import { FaPlus, FaTrash, FaEdit, FaSignOutAlt, FaLink, FaLeaf, FaLightbulb } from 'react-icons/fa';
 
+// Default gradient/abstract placeholder images used when imageURL is blank
+const DEFAULT_ACTIVITY_IMAGES = [
+  "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1618172193763-c511deb635ca?q=80&w=1000&auto=format&fit=crop"
+];
+
 export default function AdminDashboard() {
   const { logout } = useAuth();
   const [activities, setActivities] = useState([]);
@@ -63,12 +71,18 @@ export default function AdminDashboard() {
     setLoading(true);
 
     try {
+      // Automatically fallback to a default artwork if imageURL is left blank or empty
+      const finalImageURL =
+        imageURL && imageURL.trim() !== ''
+          ? imageURL.trim()
+          : DEFAULT_ACTIVITY_IMAGES[Number(activityNumber) % DEFAULT_ACTIVITY_IMAGES.length];
+
       const payload = {
         activityNumber: Number(activityNumber),
         title,
         date,
         objective,
-        imageURL,
+        imageURL: finalImageURL,
         pdfURL,
         videoURL,
         whatILearned,
@@ -179,7 +193,7 @@ export default function AdminDashboard() {
             
             <div>
               <label className="text-xs font-semibold mb-1 dark:text-gray-300 flex items-center">
-                <FaLink className="mr-1 text-emerald-500" /> Photo / Graphic URL
+                <FaLink className="mr-1 text-emerald-500" /> Photo / Graphic URL <span className="text-[10px] text-gray-400 ml-2 font-normal">(Optional: auto-assigns fallback if empty)</span>
               </label>
               <input type="url" placeholder="https://imgur.com/example.jpg" value={imageURL} onChange={e => setImageURL(e.target.value)} className="w-full px-3 py-2 rounded-xl bg-white dark:bg-gray-800 border text-sm dark:text-white" />
             </div>
@@ -199,7 +213,7 @@ export default function AdminDashboard() {
             </div>
           </div>
 
-          {/* 4. What I Learned (Large Text Area ~150 words) */}
+          {/* 4. What I Learned */}
           <div>
             <div className="flex justify-between items-center mb-1">
               <label className="text-xs font-semibold dark:text-gray-300">4. What I Learned</label>
