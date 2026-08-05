@@ -161,7 +161,7 @@ export default function AboutMe() {
                     Bachelor of Engineering (INFT)
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-medium">
-                    Vidyalankar Institute of Technology | Roll No: 47 (UID: 24101B0047)
+                    Vidyalankar Institute of Technology | Roll No:24101B0047
                   </p>
                 </div>
                 <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-gray-200 dark:border-white/10 space-y-2">
