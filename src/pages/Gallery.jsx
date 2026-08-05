@@ -8,7 +8,6 @@ import {
   FaBullseye,
   FaGraduationCap,
   FaLaptopCode,
-  FaDatabase,
 } from "react-icons/fa";
 
 // Slow-drifting aurora glow adapted dynamically for both themes
@@ -138,10 +137,41 @@ export default function AboutMe() {
                   Introduction & Background
                 </h2>
               </div>
-              <div className="p-6 rounded-2xl bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20">
+              <div className="p-6 rounded-2xl bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20 space-y-4">
                 <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-base leading-relaxed font-medium">
-                  I am an Information Technology and Computer Science student with a strong commitment to both software development and academic mentorship. My work bridges practical full-stack engineering with deep theoretical foundations, enabling me to build scalable web applications while solving complex system challenges.
+                  Hi everyone, myself <strong className="text-emerald-600 dark:text-emerald-400">Vishal Prajapati</strong>. I'm from INFT, B roll number <strong className="text-emerald-600 dark:text-emerald-400">24101B0047</strong>, studying in <strong className="text-emerald-600 dark:text-emerald-400">Vidyalankar Institute of Technology</strong>.
                 </p>
+                <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-base leading-relaxed font-medium">
+                  As an Information Technology student and tech enthusiast, I specialize in building full-stack applications, problem-solving, and maintaining a high standard of academic and technical rigor. This e-portfolio serves as a showcase of my technical projects, live practical submissions, and sustainable engineering initiatives.
+                </p>
+              </div>
+            </section>
+
+            {/* Qualifications Section */}
+            <section className="space-y-4">
+              <div className="flex items-center gap-4">
+                <SectionBadge icon={<FaGraduationCap />} tone="indigo" />
+                <h2 className="text-xl sm:text-2xl font-black tracking-tight text-gray-900 dark:text-white">
+                  Qualifications & Academic Details
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-gray-200 dark:border-white/10 space-y-2">
+                  <h3 className="font-extrabold text-sm sm:text-base text-gray-900 dark:text-white">
+                    Bachelor of Engineering (INFT)
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-medium">
+                    Vidyalankar Institute of Technology | Roll No: 47 (UID: 24101B0047)
+                  </p>
+                </div>
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-gray-200 dark:border-white/10 space-y-2">
+                  <h3 className="font-extrabold text-sm sm:text-base text-gray-900 dark:text-white">
+                    Full-Stack & Systems Architecture
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-medium">
+                    Hands-on expertise developing full-stack web applications using React, Node.js, and database systems.
+                  </p>
+                </div>
               </div>
             </section>
 
